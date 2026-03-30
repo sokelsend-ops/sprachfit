@@ -10,6 +10,13 @@ export interface GrammarPoint {
   examples: { german: string; arabic: string }[];
 }
 
+export interface Exercise {
+  question: string;
+  options?: string[];
+  correctAnswer: string;
+  type: 'multiple-choice' | 'fill-in-the-blank';
+}
+
 export interface Lesson {
   id: number;
   title: string;
@@ -18,6 +25,7 @@ export interface Lesson {
   vocabulary: Vocabulary[];
   grammar: GrammarPoint[];
   keySentences: { german: string; arabic: string }[];
+  exercises: Exercise[];
 }
 
 export const lessons: Lesson[] = [
@@ -54,9 +62,9 @@ export const lessons: Lesson[] = [
       },
       {
         title: "weil (لأن)",
-        explanation: "تبدأ جملة فرعية وينتقل الفعل المصرف إلى نهاية الجملة.",
+        explanation: "تستخدم لربط جملتين وتوضيح السبب. الفعل يذهب للنهاية.",
         examples: [
-          { german: "Ich bleibe zu Hause, weil ich krank bin.", arabic: "أبقى في المنزل لأنني مريض." }
+          { german: "Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.", arabic: "أتعلم الألمانية لأنني أريد العمل في ألمانيا." }
         ]
       }
     ],
@@ -64,6 +72,20 @@ export const lessons: Lesson[] = [
       { german: "Was ist passiert?", arabic: "ماذا حدث؟" },
       { german: "Ich habe viel gelernt.", arabic: "لقد درست كثيراً." },
       { german: "Das ist Julias Tasche.", arabic: "هذه حقيبة يوليا." }
+    ],
+    exercises: [
+      {
+        question: "Ich _____ nach Berlin gefahren.",
+        options: ["habe", "bin", "werده"],
+        correctAnswer: "bin",
+        type: "multiple-choice"
+      },
+      {
+        question: "Wir _____ viel gelernt.",
+        options: ["haben", "sind", "werden"],
+        correctAnswer: "haben",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -97,6 +119,14 @@ export const lessons: Lesson[] = [
     keySentences: [
       { german: "Wie war deine Schulzeit?", arabic: "كيف كانت حياتك المدرسية؟" },
       { german: "Ich wollte Arzt werden.", arabic: "كنت أريد أن أصبح طبيباً." }
+    ],
+    exercises: [
+      {
+        question: "Ich _____ jeden Tag Hausaufgaben machen.",
+        options: ["musste", "konnte", "durfte"],
+        correctAnswer: "musste",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -135,6 +165,14 @@ export const lessons: Lesson[] = [
     keySentences: [
       { german: "Wie findest du den Film?", arabic: "كيف تجد الفيلم؟" },
       { german: "Meiner Meinung nach ist das Internet wichtig.", arabic: "في رأيي الإنترنت مهم." }
+    ],
+    exercises: [
+      {
+        question: "Der Laptop ist _____ als das Tablet.",
+        options: ["teuer", "teurer", "am teuersten"],
+        correctAnswer: "teurer",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -172,6 +210,20 @@ export const lessons: Lesson[] = [
     keySentences: [
       { german: "Herzlichen Glückwunsch!", arabic: "مبروك!" },
       { german: "Alles Gute zum Geburtstag!", arabic: "كل سنة وأنت طيب!" }
+    ],
+    exercises: [
+      {
+        question: "Ich freue mich, _____ du kommst.",
+        options: ["dass", "wenn", "weil"],
+        correctAnswer: "wenn",
+        type: "multiple-choice"
+      },
+      {
+        question: "Ich freue _____ auf die Party.",
+        options: ["mich", "dich", "sich"],
+        correctAnswer: "mich",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -201,6 +253,14 @@ export const lessons: Lesson[] = [
     keySentences: [
       { german: "Wo ist die nächste Bank?", arabic: "أين أقرب بنك؟" },
       { german: "Ich möchte ein Konto eröffnen.", arabic: "أريد فتح حساب." }
+    ],
+    exercises: [
+      {
+        question: "_____ Sie mir bitte helfen?",
+        options: ["Können", "Könnten", "Kannst"],
+        correctAnswer: "Könnten",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -229,7 +289,15 @@ export const lessons: Lesson[] = [
     ],
     keySentences: [
       { german: "Was sind Sie von Beruf?", arabic: "ما مهنتك؟" },
-      { german: "Ich arbeite in einer Firma.", arabic: "أعمل في شركة." }
+      { german: "Ich arbeite in einer firma.", arabic: "أعمل في شركة." }
+    ],
+    exercises: [
+      {
+        question: "Nächstes Jahr _____ ich im Ausland arbeiten.",
+        options: ["werde", "wird", "werden"],
+        correctAnswer: "werde",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -257,6 +325,14 @@ export const lessons: Lesson[] = [
     ],
     keySentences: [
       { german: "Geh bis zur Kreuzung und dann rechts.", arabic: "امشِ حتى التقاطع ثم يميناً." }
+    ],
+    exercises: [
+      {
+        question: "Können Sie mir sagen, wann der Zug _____?",
+        options: ["kommt", "kommen", "gekommen"],
+        correctAnswer: "kommt",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -284,6 +360,14 @@ export const lessons: Lesson[] = [
     ],
     keySentences: [
       { german: "Mein Thema ist Prüfungsstress.", arabic: "موضوعي هو ضغط الامتحانات." }
+    ],
+    exercises: [
+      {
+        question: "Du _____ mehr schlafen.",
+        options: ["sollst", "solltest", "sollen"],
+        correctAnswer: "solltest",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -311,6 +395,14 @@ export const lessons: Lesson[] = [
     ],
     keySentences: [
       { german: "Wir könnten am Samstag einen Ausflug machen.", arabic: "يمكننا القيام برحلة يوم السبت." }
+    ],
+    exercises: [
+      {
+        question: "Ich war müde, _____ bin ich früh ins Bett gegangen.",
+        options: ["deshalb", "trotzdem", "weil"],
+        correctAnswer: "deshalb",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -338,6 +430,14 @@ export const lessons: Lesson[] = [
     ],
     keySentences: [
       { german: "Könntest du heute den Müll rausbringen?", arabic: "هل يمكنك إخراج القمامة اليوم؟" }
+    ],
+    exercises: [
+      {
+        question: "_____ ich klein war, hatte ich Angst vor Hunden.",
+        options: ["Als", "Wenn", "Wann"],
+        correctAnswer: "Als",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -366,6 +466,14 @@ export const lessons: Lesson[] = [
     ],
     keySentences: [
       { german: "An deiner Stelle würde ich mit dem Chef sprechen.", arabic: "لو كنت مكانك لتحدثت مع المدير." }
+    ],
+    exercises: [
+      {
+        question: "Ich _____ gern mehr Zeit.",
+        options: ["hätte", "wäre", "würde"],
+        correctAnswer: "hätte",
+        type: "multiple-choice"
+      }
     ]
   },
   {
@@ -393,6 +501,14 @@ export const lessons: Lesson[] = [
     ],
     keySentences: [
       { german: "Das Bild wirkt ruhig.", arabic: "اللوحة توحي بالهدوء." }
+    ],
+    exercises: [
+      {
+        question: "Der Mann, _____ mir hilft, ist nett.",
+        options: ["der", "die", "das"],
+        correctAnswer: "der",
+        type: "multiple-choice"
+      }
     ]
   }
 ];

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Lesson } from '../data/lessons';
-import { BookOpen, GraduationCap, Languages, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { BookOpen, GraduationCap, Languages, MessageSquare, CheckCircle2, PencilLine } from 'lucide-react';
 import { motion } from 'motion/react';
+import { ExerciseSection } from './ExerciseSection';
 
 interface LessonContentProps {
   lesson: Lesson;
@@ -111,6 +112,17 @@ export const LessonContent: React.FC<LessonContentProps> = ({ lesson }) => {
                 </div>
               ))}
             </div>
+          </section>
+
+          {/* Exercises Section */}
+          <section id="exercises" className="space-y-6">
+            <div className="flex items-center gap-3 text-brand-blue border-b-2 border-brand-blue/10 pb-4">
+              <div className="p-2 bg-brand-blue/5 rounded-xl">
+                <PencilLine className="w-5 h-5" />
+              </div>
+              <h2 className="font-black uppercase tracking-[0.2em] text-xs">Übungen / التمارين</h2>
+            </div>
+            <ExerciseSection exercises={lesson.exercises} />
           </section>
         </div>
       </div>
