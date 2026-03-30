@@ -35,7 +35,7 @@ export default function App() {
                 <Logo className="mb-4 scale-125" />
                 <div className="flex flex-col items-center">
                   <span className="text-white font-black tracking-widest text-xl">SPRACHFIT</span>
-                  <span className="text-brand-orange text-[10px] font-bold uppercase tracking-[0.3em]">German A1</span>
+                  <span className="text-brand-orange text-[10px] font-bold uppercase tracking-[0.3em]">German A2</span>
                 </div>
                 <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden absolute top-4 right-4 p-2 text-white/50 hover:text-white">
                   <X className="w-5 h-5" />
